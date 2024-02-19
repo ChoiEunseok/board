@@ -23,6 +23,11 @@ create sequence board_board_id_seq;
 alter table board modify cdate default systimestamp;  --운영체제 일시를 기본값으로
 alter table board modify udate default systimestamp;  --운영체제 일시를 기본값으로
 
+--not null
+alter table board modify bname not null;
+alter table board modify title not null;
+alter table board modify user_content not null;
+
 --생성--
 insert into board(board_id,bname,title,user_content)
      values(board_board_id_seq.nextval, '홍길동', '안녕하세요', '안녕하세요 반갑습니다');
@@ -36,6 +41,16 @@ commit;
 
 select * from board;
 
+--수정
+update board
+   set title = '안녕하세요',
+       user_content = '만나서 반갑습니다.',
+       udate = systimestamp
+ where board_id = 1;
+
+ --삭제
+delete from board
+ where board_id = 1;
 
 --목록
 select board_id, bname, title, user_content, cdate, udate
