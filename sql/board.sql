@@ -36,7 +36,8 @@ commit;
 
 select * from board;
 
+
 --목록
 select board_id, bname, title, user_content, cdate, udate
-  from board;
-
+     from board
+ order by board_id desc;

@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-* {outline:1px solid red;}
-.row:hover {
-    background-color : yellow;
-}
-
 .wrap {
      display:grid;
      grid-template-areas:
@@ -14,32 +9,45 @@
      grid-template-rows: 50px 500px;
      justify-content:center;
 }
+.header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 .frm {
     display:flex;
-        flex-direction: column;
+    flex-direction: column;
      width: 100%;
      height: 100%;
 }
 
 .frm .title {
+    display:flex;
+    align-items:center;
     width : 100%;
     height: 50px;
+    margin-bottom:5px;
 }
 
 .frm .title label{
+    display:flex;
     box-sizing:border-box;
     display:inline-block;
     width : 70px;
 }
 .frm .title input{
     box-sizing:border-box;
-    width : 1em;
+    flex-grow:1;
     height: 100%;
 }
 
 .frm .bname {
+    display:flex;
+    align-items:center;
     width : 100%;
     height: 50px;
+    margin-bottom:5px;
 }
 
 .frm .bname label{
@@ -48,22 +56,29 @@
 }
 .frm .bname input{
     box-sizing:border-box;
-    width : 1em;
+    flex-grow:1;
     height: 100%;
 }
 
 .frm .userContent{
     height:100%;
+    margin-bottom:5px;
 }
-.frm .userContent input{
+.frm .userContent textarea{
    box-sizing:border-box;
-   resize:none;
-   width : 100%;
+   width:100%;
    height:100%;
+   font-size:1.1rem;
 }
 
 .frm .btns{
+    display:flex;
+    justify-content :flex-end;
     height:50px;
+}
+
+.frm .btns > input{
+    margin: 5px;
 }
 
 
