@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/detail.js" async></script>
+  <title>게시판조회</title>
+</head>
+<body>
+  <h3>게시글조회</h3>
+  <form action="#" method="post">
+    <div><label for="boardId">게시글번호</label><input id="boardId" type="text" th:value="${board.boardId}" readonly></div>
+    <div><label for="bname">작성자</label><input id="bname" name="bname" type="text" th:value="${board.bname}" readonly></div>
+    <div><label for="title">제목</label><input id="title" name="title" type="text" th:value="${board.title}" readonly></div>
+    <div><label for="userContent">내용</label><input id="userContent" name="userContent" type="text" th:value="${board.userContent}" readonly></div>
+    <div><label>등록일</label><span th:text="${#temporals.format(board.cdate, 'yyyy년 MM월 dd일 a HH시 mm분')}"></span></div>
+    <div>
+      <input id="modifyBtn" type="button" value="수정">
+      <input id="deleteBtn" type="button" value="삭제">
+      <input id="listBtn" type="button" value="목록">
+    </div>
+  </form>
+  <dialog id="delModal">
+    <p>삭제하시겠습니까?</p>
+    <form action="" method="dialog">
+      <button id="cancelBtn">취소</button>
+      <button id="delItemBtn">삭제</button>
+    </form>
+  </dialog>
+</body>
+</html>

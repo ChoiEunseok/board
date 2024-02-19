@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시글수정</title>
+</head>
+<body>
+<h3>게시글수정</h3>
+<form action="" method="post">
+  <div>
+    <label for="boardId">게시글번호</label>
+    <input id="boardId" name="boardId" type="text" th:value="${board.boardId}" readonly>
+  </div>
+  <div>
+    <label for="bname">작성자</label>
+    <input id="bname" name="bname" type="text" th:value="${board.bname}" readonly>
+  </div>
+  <div>
+    <label for="title">제목</label>
+    <input id="title" name="title" type="text" th:value="${board.title}" >
+  </div>
+  <div>
+    <label for="userContent">내용</label>
+    <input id="userContent" name="userContent" type="textarea" th:value="${board.userContent}" >
+  </div>
+  <div>
+    <input id="cancelBtn" type="reset" value="취소">
+    <input id="updateBtn" type="submit" value="저장">
+    <input id="listBtn" type="button" value="목록">
+  </div>
+</form>
+</body>
+</html>

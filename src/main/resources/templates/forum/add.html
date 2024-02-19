@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/add.css">
+  <script src="/js/add.js" async></script>
+  <title>게시판 작성</title>
+</head>
+<body>
+<div class="wrap">
+  <div class="header"><h3>게시판 작성</h3></div>
+  <form id="frm" class="frm" action="/forums/add" method="post" th:object="${addForm}">
+    <div class="title">
+      <label for="title">제목</label>
+      <input id="title" name="title" type="text">
+    </div>
+    <div class="bname">
+      <label for="bname">작성자</label>
+      <input id="bname" name="bname" type="text">
+      <span class="err-msg" id="errBname"></span>
+    </div>
+    <div class="userContent">
+      <label for="userContent"></label>
+      <input id="userContent" name="userContent" type="textarea">
+    </div>
+    <div class="btns">
+      <input type="reset" value="취소">
+      <input type="submit" value="저장">
+      <input type="button" value="목록" onclick="location.href='/forums'">
+    </div>
+  </form>
+</div>
+</body>
+</html>
